@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+*{
+   margin:0;
+   padding:0;
+   font-family:sans-serif;
+ }
+ .main
+ {
+   width:100%;
+   height:100vh;
+   position:relative;
+   overflow:hidden;
+   background:linear-gradient(to top right,green,pink,skyblue,gold);
+ }
+ nav{
+   width:80%;
+   position:sticky;
+   margin:20px auto;
+   z-index:1;
+   display:flex;
+   align-center:center;
+ } 
+.nav-links{
+   flex:1;
+   text-align:right;
+ } 
+.nav-links ul li{
+   list-style:none;
+   display:inline-block;
+   margin:0 20px;
+ } 
+.nav-links ul li a{
+   color:blue;
+   text-decoration:none;
+}   
+.information{
+  width:1000px;
+  height:1000px;
+  position:absolute;
+  top:50%;
+  left:-10%;
+  transform:translateY(-50%);
+}
+#circle{
+  width:800px;
+  height:800px;
+  position:absolute;
+  top:10%;
+  left:10%;
+  border-radius:50%;
+  
+}
+.web development{
+  width:900px;
+  position:center;
+  bottom:30%;
+  right:50%;
+  transform:translateY(-50%);
+  z-index:1;
+}  
+  
+</style> 
+<body>
+
+<div class="main">
+<nav>
+<div class="nav-links">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Mobile</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Email</a></li>
+<li><a href="#">Address</a></li>
+</ul>
+</div>
+</nav>
+<div class="information">
+<div class="overlay"></div>
+  <img class="mySlides" src="https://www.q5infotech.com/wp-content/uploads/2020/09/Web-Development.jpeg" class="web development"
+  style="width:100%">
+  <img class="mySlides" src="https://www.onlinecoursereport.com/wp-content/uploads/2020/07/shutterstock_394793860-1024x784.jpg"
+  style="width:100%">
+  <img class="mySlides" src="https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png" class="web development"style="width:100%">
+
+  <div id="circle">
+  </div>
+  
+  <script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+
+</div>
+</body>
+</html>
