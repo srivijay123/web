@@ -1,0 +1,223 @@
+<html>
+<head>
+<title>website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+*{
+margin:0;
+padding:0;
+font-family:sans-serif;
+}
+.main{
+width:100%;
+height:100vh;
+posotion:relative;
+overflow:hidden;
+background:linear-gradient(to right,#9c27b0,#8ecdff);
+}
+nav{
+    width:80%;
+    position:sticky;
+    margin:20px auto;
+    z-index:1;
+    dipslay:flex;
+    align-items:center;
+}
+.logo{
+    flex-basis:20%;
+}
+.logo img{
+    width:100px;
+	
+}
+.nav-links{
+     flex:1;
+	 text-align:right;
+}
+.nav-links ul li{
+     list-styles:none;
+     display:inline-block;
+     margin:0 20px;
+}
+.nav-links ul li a{
+     color:#fff;
+	 text-decoration:none;
+}	 
+.information{
+     width:1000px;
+	 height:1000px;
+	 position:absolute;
+	 top:50%;
+	 left:-10%;
+	 transform:translateY(-50%);
+}
+#circle{
+	 width:1000px;
+	 height:1000px;
+	 position:absolute;
+	 top:0px;
+	 left:0px;
+	 border-radius:50%;
+	 transform:rotate(0deg);
+	 transition:1s;
+}
+.feature img{
+     width:90px; 	 
+}
+.feature{
+     position:absolute;
+	 display:flex;
+	 color:#fff;
+}   
+.feature div{
+    margin-left:30px;
+}
+.feature div p{
+margin-top:8px;
+}
+.one{
+top:450px;
+right:70px;}
+.two{
+top:220px;
+left:380px;
+transform:rotate(-90deg);
+}
+.three{
+bottom:450px;
+left:100px;
+transform:rotate(-180deg);
+}
+.four{
+bottom:230px;
+right:370px;
+transform:rotate(-270deg);
+}
+.ktm{
+width:400px;
+position:absolute;
+top:50%;
+left:15%;
+transform:translateY(-50%);
+z-index:1;
+}
+.controls{
+  position:absolute;
+  right:10%;
+  top:50%;
+  transform:translateY(-50%);
+  text-align:center;
+  }
+  .controls h3{
+    margin:15px 0;
+	color:#fff;
+	}
+#upBtn{
+	  width:15px;
+	  cursor:pointer;
+	  }
+ #downBtn{
+	  width:15px;
+	  cursor:pointer;
+	  transform:rotate(180deg);
+	  }
+	  .overlay{
+	  width:0;
+	  height:0;
+	  border-top:500px solid #fff;
+	  border-right:500px solid transparent ;
+	  border-bottom:500px solid #fff;
+	  border-left:500px solid #fff;
+	  position:absolute;
+	  left0;
+	  top:0;
+	  }
+</style>
+
+<body>
+
+<div class="main">
+<nav>
+<div class="logo">
+<h1>KTM Duke 125cc</h1>
+
+
+</div>
+<div class="nav-links">
+<ul>
+       <li><a href="#">Home</a></li>
+	   <li><a href="#">Phone</a></li>
+       <li><a href="#">Features</a></li>
+       <li><a href="#">Address</a></li>
+</ul>
+</div>
+</nav>
+<div class="information">
+<div class="overlay"></div>
+   <img src="https://i.pinimg.com/736x/38/00/38/380038d57c1674ffdbdfc61f70c646e4.jpg" class="ktm">
+    <div id="circle">
+	  <div class ="feature one">
+	    <img src=" https://imgd.aeplcdn.com/1056x594/n/cw/ec/102895/rc-200-2021-speedometer.jpeg?isig=0&q=75">
+		<div>
+		  <h1>Speedometer</h1>
+		  <p>top speed:140kmph.</p>
+		  </div>
+		</div>
+	  <div class="feature two">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4wvXcU3Z4JBDq917hdC7Tn7RW5Ala_wKI7w&usqp=CAU ">
+		<div>
+		  <h1>Engine</h1>
+		  <p>best quality.</p>
+		  </div>
+		</div>
+      <div class="feature three">
+        <img src="https://cdn.shopify.com/s/files/1/0240/8149/8157/products/390DUKE_DataSet31_large.jpg?v=1614193515 ">
+		<div>
+		  <h1>Wheel</h1>
+		  <p>with strong and looking shine.</p>
+		  </div>
+		</div>
+      <div class="feature four">
+        <img src=" https://m.media-amazon.com/images/I/31bn0i3TLdL._AC_SS450_.jpg">
+		<div>
+		  <h1>KTM</h1>
+		  <p>Drive and enjoy.</p>
+		  </div>
+	
+</div>
+</div>
+</div>
+
+<div class="controls">
+<img src="https://www.dlf.pt/dfpng/middlepng/411-4117445_up-right-black-arrow-png-icons-up-arrow.png" id="upBtn">
+<h3>Features</h3>
+<img src="https://www.dlf.pt/dfpng/middlepng/411-4117445_up-right-black-arrow-png-icons-up-arrow.png" id="downBtn">
+</div>
+</div>
+		
+	  
+	  <script>
+	  var circle =document.getElementById("circle");
+	  var upBtn =document.getElementById("upBtn");
+	  var downBtn =document.getElementById("downBtn");
+	  
+	  var rotateValue=circle.style.transform;
+	  var rotateSum;
+	  
+	  upBtn.onclick=function()
+	  {
+	  rotateSum=rotateValue +"rotate(-90deg)";
+	  circle.style.transform=rotateSum;
+	  rotateValue=rotateSum;
+	  }
+	   downBtn.onclick=function()
+	  {
+	  rotateSum=rotateValue +"rotate(90deg)";
+	  circle.style.transform=rotateSum;
+	  rotateValue=rotateSum;
+	  }
+	  </script>
+	
+</body>
+</html>
